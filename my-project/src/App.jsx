@@ -5,6 +5,29 @@ import {
   BrowserRouter as Router, Routes, Route, Link, useNavigate,NavLink
 } from "react-router-dom";
 
+const Home = () => {
+  return (
+    <div className="w-full flex justify-center flex-col items-center h-screen bg-neutral-900 text-rose-900">
+      <div className="flex flex-col items-center gap-2">
+        <div className="text-7xl font-bold">HELLO WORLD</div>
+        <div className="text-2xl">in 1080 languages</div>
+      </div>
+      <div className="flex flex-row gap-6 mt-10 ">
+        <Link to="browse">
+        <div className=" w-48 py-4 bg-neutral-100 hover:cursor-pointer text-rose-400 text-center text-2xl rounded hover:bg-rose-400 duration-300 hover:text-neutral-100 duration-300">
+          Browse
+        </div>
+        </Link>
+        <Link to="languageList">
+        <div className=" w-48 py-4 bg-neutral-100 hover:cursor-pointer text-rose-400 text-center text-2xl rounded hover:bg-rose-400 duration-300 hover:text-neutral-100 duration-300">
+          Language List
+        </div>
+        </Link>
+      </div>
+    </div>
+  );
+};
+
 const Browse = () => {
   const [query, setquery] = useState("");
  
@@ -66,7 +89,7 @@ const LanguageList = () => {
           <>
             <div className="flex items-center flex-row gap-5 mt-5">
               <div className="text-5xl">{e.toLocaleUpperCase()}</div>
-              <div className="bg-rose-900 w-full h-1"></div>
+              <div className="bg-neutral-100 h-0.5 w-full"></div>
             </div>
             <div className="grid grid-cols-3 mt-3">
               {Data
@@ -90,28 +113,6 @@ const LanguageList = () => {
   );
 };
 
-const Home = () => {
-  return (
-    <div className="w-full flex justify-center flex-col items-center h-screen bg-neutral-900 text-rose-900">
-      <div className="flex flex-col items-center gap-2">
-        <div className="text-7xl font-bold">HELLO WORLD</div>
-        <div className="text-2xl">in 1080 languages</div>
-      </div>
-      <div className="flex flex-row gap-6 mt-10 ">
-        <Link to="browse">
-        <div className=" w-48 py-4 bg-neutral-100 hover:cursor-pointer text-rose-400 text-center text-2xl rounded hover:bg-rose-400 duration-300 hover:text-neutral-100 duration-300">
-          Browse
-        </div>
-        </Link>
-        <Link to="languageList">
-        <div className=" w-48 py-4 bg-neutral-100 hover:cursor-pointer text-rose-400 text-center text-2xl rounded hover:bg-rose-400 duration-300 hover:text-neutral-100 duration-300">
-          Language List
-        </div>
-        </Link>
-      </div>
-    </div>
-  );
-};
 
 const App = () => {
   return (
